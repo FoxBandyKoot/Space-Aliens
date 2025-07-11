@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/enemies">
+        <file>enemy1.png</file>
+        <file>enemy2.png</file>
+        <file>enemy3.png</file>
+        <file>enemy4.png</file>
+        <file>enemy5.png</file>
+    </qresource>
+    <qresource prefix="/player">
+        <file>rocket.png</file>
+        <file>thruster.gif</file>
+    </qresource>
+    <qresource prefix="/bullets">
+        <file>bullet.png</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file>fonts/Doto-Bold.ttf</file>
+        <file>fonts/Doto-ExtraBold.ttf</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file>audio/mixkit-short-laser-gun-shot-1670.wav</file>
+        <file>audio/L'Horizon d'Ambre.wav</file>
+    </qresource>
+</RCC>
