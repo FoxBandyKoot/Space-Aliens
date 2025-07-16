@@ -7,5 +7,4 @@ Space Invaders like made with Qt 6.9 in C++ & QML.
 2. Build to run.
 
 ## 🎬 Trailer (YouTube)
-Click the image below to watch the gameplay trailer:
 [Watch the trailer](https://youtu.be/5Q1TExIJOHs)
