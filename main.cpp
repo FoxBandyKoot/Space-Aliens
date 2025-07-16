@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     Controller controller;
     engine.rootContext()->setContextProperty("controller", &controller);
 
-    const QUrl url(QStringLiteral("qrc:/QtAsteroids/main.qml"));
+    const QUrl url(QStringLiteral("qrc:/SpaceAliens/main.qml"));
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreated,
