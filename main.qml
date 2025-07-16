@@ -7,7 +7,7 @@ Window {
     width: Screen.desktopAvailableWidth
     height: Screen.desktopAvailableHeight
     visible: true
-    title: qsTr("Spaace Alien")
+    title: qsTr("Space Aliens")
     color: "darkred"
 
     // Check when font is loaded

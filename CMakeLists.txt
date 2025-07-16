@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.16)
-
 project(QtAsteroids VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
@@ -23,11 +22,12 @@ qt_add_qml_module(appQtAsteroids
     SOURCES Controller.h Controller.cpp
     QML_FILES Bullet.qml
     SOURCES Bullet.h Bullet.cpp
-SOURCES main.cpp
-QML_FILES main.qml
-SOURCES Enemy.h Enemy.cpp
-QML_FILES Enemy.qml
-RESOURCES Assets/Assets.qrc
+    SOURCES main.cpp
+    QML_FILES main.qml
+    SOURCES Enemy.h Enemy.cpp
+    QML_FILES Enemy.qml
+    RESOURCES Assets/Assets.qrc
+    SOURCES SoundManager.h SoundManager.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

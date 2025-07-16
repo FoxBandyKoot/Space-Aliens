@@ -20,5 +20,9 @@
     <qresource prefix="/sounds">
         <file>audio/mixkit-short-laser-gun-shot-1670.wav</file>
         <file>audio/L'Horizon d'Ambre.wav</file>
+        <file>audio/explosion_enemy_3.wav</file>
+        <file>audio/explosion_enemy_1.wav</file>
+        <file>audio/explosion_enemy_2.wav</file>
+        <file>audio/explosion_player.wav</file>
     </qresource>
 </RCC>

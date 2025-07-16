@@ -19,12 +19,34 @@ Enemy::Enemy(QObject* parent): m_x_speed(4), m_y_speed(2) {
 
     m_max_y = (screen->geometry().height() / 100) * 110;
     setY(screen->geometry().height() * 0.05);
+
+
+    // Fill audio data
+    audio_files_destruction.append(QUrl::fromLocalFile(":/sounds/audio/explosion_enemy_1.wav"));
+    audio_files_destruction.append(QUrl::fromLocalFile(":/sounds/audio/explosion_enemy_2.wav"));
+    audio_files_destruction.append(QUrl::fromLocalFile(":/sounds/audio/explosion_enemy_3.wav"));
+
+    for(int i = 0; i < audio_files_destruction.size(); i++)
+    {
+        QSoundEffect* sfx = new QSoundEffect(this);
+        sfx->setVolume(0.25f);
+        sfx->setSource(audio_files_destruction[i]);
+        sfx_destructions.append(sfx);
+    }
 }
 
 void Enemy::tick(){
+    if (m_is_destroyed) return;
     if(Controller::is_playing == false) return;
     setY(m_y + m_y_speed);
     if(m_y > m_max_y) {
         setY(m_max_y);
+    }
+}
+
+void Enemy::set_destroyed(bool value) {
+    if (m_is_destroyed != value) {
+        m_is_destroyed = value;
+        emit destroyed_changed();
     }
 }

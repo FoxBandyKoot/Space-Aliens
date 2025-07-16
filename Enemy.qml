@@ -18,8 +18,15 @@ Item {
     y: model.y
 
     Image{
-        id: enemies
+        id: image
         anchors.fill: parent
         source: ePng[model.m_index]
+        visible: !model.m_is_destroyed
+        Connections{
+            target: controller
+            function onEnemy_changed(){
+                image.visible = false;
+            }
+        }
     }
 }

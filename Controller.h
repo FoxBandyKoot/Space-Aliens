@@ -9,8 +9,6 @@
 #include <QSoundEffect>
 
 class QScreen;
-class QMediaPlayer;
-class QAudioOutput;
 
 class Controller : public QObject
 {
@@ -20,7 +18,7 @@ class Controller : public QObject
     Q_PROPERTY(float y READ getY WRITE setY NOTIFY yChanged)
     Q_PROPERTY(int score READ get_score WRITE set_score NOTIFY score_changed)
     Q_PROPERTY(QQmlListProperty<Bullet> Q_list_bullets READ Q_list_bullets NOTIFY bulletChanged)
-    Q_PROPERTY(QQmlListProperty<Enemy> Q_list_enemies READ Q_list_enemies NOTIFY enemyChanged)
+    Q_PROPERTY(QQmlListProperty<Enemy> Q_list_enemies READ Q_list_enemies NOTIFY enemy_changed)
 
 public:
     Controller(QObject* parent = nullptr);
@@ -66,7 +64,7 @@ signals:
     void xChanged();
     void yChanged();
     void bulletChanged();
-    void enemyChanged();
+    void enemy_changed();
     void score_changed();
     void game_over();
     void game_restart();
@@ -82,6 +80,7 @@ private:
     int m_max_thrurst;
     int move_direction;
     int lose_height;
+    int m_score = 0;
     float m_x_speed;
     float m_y_speed;
     float m_max_y_speed = 5;
@@ -92,10 +91,6 @@ private:
     QList<Bullet*> list_bullets;
     QList<Enemy*> list_enemies;
     QScreen* screen;
-    QMediaPlayer* music_player;
-    QAudioOutput* audio_output;
-
-    int m_score = 0;
 
     void game_over(Enemy* enemy);
 };
